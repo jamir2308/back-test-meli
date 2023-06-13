@@ -27,6 +27,14 @@ productRouter.get('/api/items/:id', async (req, res, next) => {
     }
 });
 
+productRouter.get('/trm', async (req, res, next) => {
+    try {
+        res.json({value: 4200});
+    } catch (error) {
+        next(error);
+    }
+});
+
 // Middleware de manejo de errores
 productRouter.use((err, req, res, next) => {
     console.error(err);
